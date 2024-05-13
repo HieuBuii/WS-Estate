@@ -1,7 +1,10 @@
 import { Server } from "socket.io";
 import { createServer } from "http";
 import "dotenv/config";
-const httpServer = createServer();
+import express from "express";
+
+const app = express();
+const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
